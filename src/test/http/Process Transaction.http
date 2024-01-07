@@ -1,0 +1,9 @@
+POST localhost:9000/transaction
+Content-Type: application/json
+
+{
+  "walletId": "4844e004-ebab-41f7-bb12-99e90c37f741",
+  "currency": "GBP",
+  "amount": 1000,
+    "type": "CREDIT"
+}

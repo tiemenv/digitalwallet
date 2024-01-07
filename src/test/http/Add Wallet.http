@@ -1,0 +1,7 @@
+POST localhost:9000/wallet
+Content-Type: application/json
+
+{
+  "userId": "47ca1b10-b7c1-420e-a9f1-ec7ab24087b0",
+  "currency": "GBP"
+}

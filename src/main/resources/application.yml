@@ -1,0 +1,30 @@
+spring:
+    application:
+        name: digitalwallet
+    profiles:
+        active: local
+    jackson:
+        mapper:
+            accept_case_insensitive_properties: true
+            accept_case_insensitive_enums: true
+    datasource:
+        url: "jdbc:postgresql://localhost:4999/wallet"
+        username: "postgres"
+        password: "password"
+        driver-class-name: org.postgresql.Driver
+    flyway:
+        schemas: public
+    jooq:
+        sql-dialect: postgres
+
+server:
+    port: 9000
+    forward-headers-strategy: framework
+    servlet:
+        context-path: /digital-wallet
+
+springdoc:
+    api-docs:
+        path: /digital-wallet/docs
+    swagger-ui:
+        path: /digital-wallet/swagger-ui.html
