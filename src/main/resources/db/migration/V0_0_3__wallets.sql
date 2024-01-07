@@ -15,3 +15,5 @@ CREATE TABLE wallets (
 
 CREATE INDEX "IDX___wallets___id" ON wallets (id);
 CREATE INDEX "IDX___wallets___user_id" ON wallets (user_id);
+
+INSERT INTO users (id, user_id) VALUES ('394e4b81-691b-4561-b3c7-c7d2e0c9c794','47ca1b10-b7c1-420e-a9f1-ec7ab24087b0');

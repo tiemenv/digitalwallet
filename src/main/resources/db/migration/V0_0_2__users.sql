@@ -9,6 +9,6 @@ CREATE TABLE users (
 
 CREATE INDEX "IDX___users___id" ON users (id);
 
-INSERT INTO users (username) VALUES ('tiemen');
+INSERT INTO users (id, username) VALUES ('47ca1b10-b7c1-420e-a9f1-ec7ab24087b0','tiemen');
 INSERT INTO users (username) VALUES ('john');
 INSERT INTO users (username) VALUES ('jane');
