@@ -1,7 +1,7 @@
 package com.tiemenv.digitalwallet.controllers
 
 import com.tiemenv.digitalwallet.dto.AddWalletDTO
-import com.tiemenv.digitalwallet.dto.WalletResponseDTO
+import com.tiemenv.digitalwallet.dto.WalletResponse
 import com.tiemenv.digitalwallet.dto.WalletResponseMapper
 import com.tiemenv.digitalwallet.models.Currency
 import com.tiemenv.digitalwallet.services.WalletService
@@ -14,7 +14,7 @@ import java.util.*
 class WalletController(private val walletService: WalletService) {
 
     @PostMapping("/wallet")
-    fun addWallet(@RequestBody request: AddWalletRequest): ResponseEntity<WalletResponseDTO> {
+    fun addWallet(@RequestBody request: AddWalletRequest): ResponseEntity<WalletResponse> {
         val wallet = walletService.addWallet(request.toDTO())
         return ResponseEntity.ok(WalletResponseMapper.fromModel(wallet))
     }

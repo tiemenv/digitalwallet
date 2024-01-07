@@ -15,18 +15,9 @@ class WalletService(private val walletRepository: WalletRepositoryJooq) {
                 userId = addWalletDTO.userId,
                 balance = addWalletDTO.balance,
                 currency = addWalletDTO.currency,
+                isLocked = false,
                 createdAt = null
             )
             return walletRepository.addWallet(wallet)
-        }
-
-        fun getWallet(walletId: UUID): WalletModel {
-            val wallet = walletRepository.getWallet(walletId)
-            wallet.isPresent || throw Exception("Wallet not found")
-            return wallet.get()
-        }
-
-        fun updateWallet(walletModel: WalletModel): WalletModel {
-            return walletRepository.updateWallet(walletModel)
         }
 }

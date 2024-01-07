@@ -22,7 +22,7 @@ import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row5;
+import org.jooq.Row6;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -44,7 +44,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Wallets extends TableImpl<WalletsRecord> {
 
-    private static final long serialVersionUID = -1876816991;
+    private static final long serialVersionUID = -30016763;
 
     /**
      * The reference instance of <code>public.wallets</code>
@@ -78,6 +78,11 @@ public class Wallets extends TableImpl<WalletsRecord> {
      * The column <code>public.wallets.currency</code>.
      */
     public final TableField<WalletsRecord, Currency> CURRENCY = createField(DSL.name("currency"), org.jooq.impl.SQLDataType.VARCHAR.nullable(false).defaultValue(org.jooq.impl.DSL.field("'GBP'::currency", org.jooq.impl.SQLDataType.VARCHAR)).asEnumDataType(com.tiemenv.digitalwallet.infrastructure.storage.jooq.enums.Currency.class), this, "");
+
+    /**
+     * The column <code>public.wallets.is_locked</code>.
+     */
+    public final TableField<WalletsRecord, Boolean> IS_LOCKED = createField(DSL.name("is_locked"), org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaultValue(org.jooq.impl.DSL.field("false", org.jooq.impl.SQLDataType.BOOLEAN)), this, "");
 
     /**
      * The column <code>public.wallets.created_at</code>.
@@ -173,11 +178,11 @@ public class Wallets extends TableImpl<WalletsRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row5 type methods
+    // Row6 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row5<UUID, UUID, Double, Currency, Timestamp> fieldsRow() {
-        return (Row5) super.fieldsRow();
+    public Row6<UUID, UUID, Double, Currency, Boolean, Timestamp> fieldsRow() {
+        return (Row6) super.fieldsRow();
     }
 }

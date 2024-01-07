@@ -1,14 +1,12 @@
 package com.tiemenv.digitalwallet.dto
 
 import com.tiemenv.digitalwallet.models.Currency
-import com.tiemenv.digitalwallet.models.TransactionModel
-import com.tiemenv.digitalwallet.models.TransactionType
 import com.tiemenv.digitalwallet.models.WalletModel
 import java.math.BigDecimal
 import java.sql.Timestamp
 import java.util.UUID
 
-data class WalletResponseDTO(
+data class WalletResponse(
     val id: UUID,
     val userId: UUID,
     val balance: BigDecimal,
@@ -17,8 +15,8 @@ data class WalletResponseDTO(
 )
 
 object WalletResponseMapper {
-    fun fromModel(walletModel: WalletModel): WalletResponseDTO {
-        return WalletResponseDTO(
+    fun fromModel(walletModel: WalletModel): WalletResponse {
+        return WalletResponse(
             id = walletModel.id,
             userId = walletModel.userId,
             balance = walletModel.balance,

@@ -7,6 +7,7 @@ CREATE TABLE wallets (
     user_id UUID NOT NULL,
     balance DOUBLE PRECISION NOT NULL DEFAULT 0,
     currency currency NOT NULL DEFAULT 'GBP',
+    is_locked BOOLEAN NOT NULL DEFAULT FALSE,
     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
     CONSTRAINT "PK___wallet_id___id" PRIMARY KEY (id),
     CONSTRAINT "FK___wallets___user_id" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE

@@ -13,6 +13,7 @@ object WalletMapper {
         walletsRecord.userId = walletModel.userId
         walletsRecord.balance = walletModel.balance.toDouble()
         walletsRecord.currency = JooqCurrency.valueOf(walletModel.currency.toString())
+        walletsRecord.isLocked = walletModel.isLocked
         return walletsRecord
     }
 
@@ -22,6 +23,7 @@ object WalletMapper {
             userId = walletsRecord.userId,
             balance = walletsRecord.balance.toBigDecimal(),
             currency = DomainCurrency.valueOf(walletsRecord.currency.toString()),
+            isLocked = walletsRecord.isLocked,
             createdAt = walletsRecord.createdAt
         )
     }

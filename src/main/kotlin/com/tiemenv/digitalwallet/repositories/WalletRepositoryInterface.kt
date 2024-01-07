@@ -15,4 +15,8 @@ interface WalletRepositoryInterface {
     fun updateWallet(walletModel: WalletModel): WalletModel
 
     fun addWallet(walletModel: WalletModel): WalletModel
+
+    fun lockWallet(walletId: UUID)
+
+    fun unlockWallet(walletId: UUID)
 }

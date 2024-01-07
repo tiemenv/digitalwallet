@@ -54,4 +54,18 @@ class WalletRepositoryJooq(private val dslContext: DSLContext): WalletRepository
         return WalletMapper.toModel(walletRecord)
     }
 
+    override fun lockWallet(walletId: UUID) {
+        dslContext.update(WALLETS)
+            .set(WALLETS.IS_LOCKED, true)
+            .where(WALLETS.ID.eq(walletId))
+            .execute()
+    }
+
+    override fun unlockWallet(walletId: UUID) {
+        dslContext.update(WALLETS)
+            .set(WALLETS.IS_LOCKED, false)
+            .where(WALLETS.ID.eq(walletId))
+            .execute()
+    }
+
 }

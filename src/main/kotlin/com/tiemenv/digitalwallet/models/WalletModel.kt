@@ -9,6 +9,7 @@ data class WalletModel(
     val userId: UUID,
     val balance: BigDecimal,
     val currency: Currency,
+    val isLocked: Boolean,
     val createdAt: Timestamp?
 ) {
     companion object {
@@ -16,6 +17,7 @@ data class WalletModel(
             userId: UUID,
             balance: BigDecimal,
             currency: Currency,
+            isLocked: Boolean,
             createdAt: Timestamp?
         ): WalletModel {
             return WalletModel(
@@ -23,6 +25,7 @@ data class WalletModel(
                 userId = userId,
                 balance = balance,
                 currency = currency,
+                isLocked = isLocked,
                 createdAt = createdAt
             )
         }
